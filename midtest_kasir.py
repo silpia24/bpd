@@ -75,9 +75,12 @@ while True:
         for order in orders:
             item_price = menu[order[0]][1]
             discounted_price = item_price
-            if is_first_10:
+            if is_first_10 and is_early_bird:
+                discounted_price *= 0.50  # Diskon total 50%
+            elif is_first_10:
                 discounted_price *= 0.70  # Diskon 30%
-            discounted_price *= 0.80  # Tambahan diskon 20% untuk early bird
+            elif is_early_bird:
+                discounted_price *= 0.80  # Diskon 20%
             discount = (item_price - discounted_price) * order[2]
             total_discount += discount
             total_price += discounted_price * order[2]
@@ -87,5 +90,13 @@ while True:
     print(f"Waktu Transaksi: {transaction_time}")
     for order in orders:
         print(f"{order[2]} x {order[1]} (Rp. {order[3]:,.0f} per item) | Diskon per item: Rp. {(order[4] / order[2]):,.0f} | Total Diskon: Rp. {order[4]:,.0f}")
+
+    if is_first_10 and is_early_bird:
+        print("\nPelanggan mendapatkan diskon 50% karena termasuk 10 pelanggan pertama dan bertransaksi di jam 07:00-08:00.")
+    elif is_first_10:
+        print("\nPelanggan mendapatkan diskon 30% karena termasuk 10 pelanggan pertama.")
+    elif is_early_bird:
+        print("\nPelanggan mendapatkan diskon 20% karena bertransaksi di jam 07:00-08:00.")
+
     print(f"Total Diskon Keseluruhan: Rp. {total_discount:,.0f}")
     print(f"Total Harga: Rp. {total_price:,.0f}\n")
