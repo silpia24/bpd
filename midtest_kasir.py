@@ -37,15 +37,16 @@ while True:
                 continue
 
             item_name, item_price = menu[menu_number]
-            discounted_price = item_price
 
+            # Diskon dihitung setelah harga ditampilkan
+            discounted_price = item_price
             if is_first_10:
                 discounted_price *= 0.70
 
             discount = (item_price - discounted_price) * quantity
             total_discount += discount
             total_price += discounted_price * quantity
-            orders.append((menu_number, item_name, quantity, discounted_price, discount))
+            orders.append((menu_number, item_name, quantity, item_price, discount))
 
             # Tanyakan apakah ingin memesan menu lain
             another_order = input("\nApakah ingin memesan menu lain? (y/n): ").strip().lower()
@@ -69,7 +70,7 @@ while True:
     is_early_bird = datetime.strptime("07:00", "%H:%M").time() <= transaction_time <= datetime.strptime("08:00", "%H:%M").time()
 
     # Hitung ulang diskon jika early bird
-    if is_early_bird:
+    if is_early_bird or is_first_10:
         total_price = 0
         total_discount = 0
         for order in orders:
@@ -92,11 +93,11 @@ while True:
         print(f"{order[2]} x {order[1]} (Rp. {order[3]:,.0f} per item) | Diskon per item: Rp. {(order[4] / order[2]):,.0f} | Total Diskon: Rp. {order[4]:,.0f}")
 
     if is_first_10 and is_early_bird:
-        print("\nPelanggan mendapatkan diskon 50% karena termasuk 10 pelanggan pertama dan bertransaksi di jam 07:00-08:00.")
+        print("Pelanggan mendapatkan diskon 50% karena termasuk 10 pelanggan pertama dan bertransaksi di jam 07:00-08:00.")
     elif is_first_10:
-        print("\nPelanggan mendapatkan diskon 30% karena termasuk 10 pelanggan pertama.")
+        print("Pelanggan mendapatkan diskon 30% karena termasuk 10 pelanggan pertama.")
     elif is_early_bird:
-        print("\nPelanggan mendapatkan diskon 20% karena bertransaksi di jam 07:00-08:00.")
+        print("Pelanggan mendapatkan diskon 20% karena bertransaksi di jam 07:00-08:00.")
 
     print(f"Total Diskon Keseluruhan: Rp. {total_discount:,.0f}")
     print(f"Total Harga: Rp. {total_price:,.0f}\n")
