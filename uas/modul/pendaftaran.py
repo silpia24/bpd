@@ -12,4 +12,14 @@ def cetak(nim):
     print("Jurusan  : " + str(jurusan))
 
 nim = input("Masukkan NIM: ")
+nama = str(input("Masukkan Nama: "))
+phone = int(input("Masukkan Phone: "))
+email = str(input("Masukkan Email: "))
+alamat = str(input("Masukkan Alamat: "))
+
+print("\n-------------------------\n")
 cetak(nim)
+print("Nama     : ", nama)
+print("Nomor HP : ", phone)
+print("Email    : ", email)
+print("Alamat   : ", alamat)
