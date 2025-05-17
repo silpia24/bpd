@@ -1,0 +1,62 @@
+"""
+SAT, 17 MAY 2025
+"""
+# ========== MATERI 1: COMPREHENSION ========== 
+
+# buah = ["apple", "banana", "cherry"]
+# new_buah = []
+
+# for x in buah:
+#     if "a" in x:
+#         new_buah.append(x)
+
+# # looping dan penyeleksian kondisi untuk menambhakna data ke dalam list_buah
+# print(new_buah)
+
+# # gunakan comprehension untuk membambahka data ke dalam list_buah
+# new_buah = [x for x in buah if "a" in x]
+# print(new_buah)
+
+# list = [1,2,3,4,5,6,7,8,9,10]
+# for x in list:
+#     if x % 2 == 0:
+#         print(x)
+
+# # penerapan comprehension
+# new_list = [x for x in list if x % 2 == 0]
+# print("Bilanangan genap: ", new_list)
+
+# # comprehension dalam pernyataan range
+# angka = [i for i in range(10)]
+# print(angka)
+
+# for i in range(10):
+#     angka.append(i)
+
+# print(angka)
+
+# # contoh kasus comprehension dalam pernyataan range
+# koordinat = [(x,y) for x in range(3) for y in range(3)]
+# print(koordinat)
+
+# # contoh comprehension dalam if else
+# bilangan = [1, 2, 3, 4, 5]
+# pangkat1 = []
+
+# for angka in bilangan:
+#     if angka % 2 == 0:
+#         pangkat1.append(angka**2)
+#     else:
+#         pangkat1.append(angka)
+
+# print(pangkat1)
+
+# pangkat = {angka: angka**2 if angka % 2 == 0 else angka for angka in bilangan}
+# print(pangkat)
+
+# pangkat1 = [angka**2 if angka % 2 == 0 else angka for angka in bilangan]
+# print(pangkat1)
+
+dict1 = {"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
+new_dict = {key: value for key, value in dict1.items() if value % 2 == 0}
+print(new_dict)
