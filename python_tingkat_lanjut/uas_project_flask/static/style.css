@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    background-image: url('img/bg.png');
+    background-position: inherit;
+    color: #284b63;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #284b63;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #284b63;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #284b63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #284b63;
+}
+
+.result {
+    margin-top: 25px;
+}
+
+.result span {
+    font-size: 1.1em;
+}
+
+.result strong {
+    color: #284b63;
+}
+
+.result .status-lulus {
+    color: #28a745 !important;
+}
+
+.result .status-tidak_lulus {
+    color: #dc3545 !important;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 20px 0;
+}
+
+#btnClear {
+    text-decoration: none;
+    color: #284b63;
+    text-align: end;
+    display: block;
+    margin-top: 12px;
+}
